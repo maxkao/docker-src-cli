@@ -17,5 +17,6 @@ RUN curl -LO https://github.com/sourcegraph/src-cli/releases/download/${SRC_CLI_
 RUN chmod +x src_linux_amd64
 
 FROM alpine:latest AS run
+RUN apk add --no-cache git
 COPY --from=build /src_linux_amd64 /usr/bin/src
 
