@@ -12,7 +12,7 @@ LSIF index file:
 docker run \
   --rm -it \
   -e SRC_ACCESS_TOKEN=$SRC_ACCESS_TOKEN \
-  -v $(pwd):/data \
+  -v $(pwd):/data:ro \
   -w /data \
   sourcegraph/src-cli:3.11.1 \
   src lsif upload
